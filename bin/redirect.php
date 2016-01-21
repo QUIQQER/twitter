@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Twitter app oauth
+ * Twitter redirect
  */
 
 define('QUIQQER_SYSTEM', true);

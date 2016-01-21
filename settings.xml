@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <settings>
+
+        <config name="plugins/quiqqer/twitter">
+
+            <section name="auth">
+                <conf name="CONSUMER_KEY">
+                    <type><![CDATA[string]]></type>
+                </conf>
+                <conf name="CONSUMER_SECRET">
+                    <type><![CDATA[string]]></type>
+                </conf>
+            </section>
+        </config>
+
+        <window name="quiqqer-log-settings">
+            <title>Twitter Einstellungen</title>
+            <params>
+                <icon>icon-twitter</icon>
+            </params>
+
+            <categories>
+
+                <category name="twitter_auth">
+                    <text>Twitter Einstellungen</text>
+                    <icon>icon-twitter</icon>
+
+                    <settings title="twitter_auth_section" name="twitter_auth_section">
+                        <title>Auth Einstellungen</title>
+
+                        <input conf="auth.CONSUMER_KEY">
+                            <text>CONSUMER_KEY</text>
+                        </input>
+
+                        <input conf="auth.CONSUMER_SECRET">
+                            <text>CONSUMER_SECRET</text>
+                        </input>
+                    </settings>
+                </category>
+
+            </categories>
+        </window>
+
+    </settings>
+</quiqqer>
