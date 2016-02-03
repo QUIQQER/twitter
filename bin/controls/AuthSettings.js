@@ -45,9 +45,13 @@ define('package/quiqqer/twitter/bin/controls/AuthSettings', [
 
             if (Url) {
                 Url.set('html', callbackUrl);
-                Login.set('html', loginUrl);
             } else {
                 console.info(callbackUrl);
+            }
+
+            if (Login) {
+                Login.set('html', loginUrl);
+            } else {
                 console.info(loginUrl);
             }
         }
