@@ -2,7 +2,7 @@
 <database>
 
     <global>
-        <table name="users">
+        <table name="twitter_users">
             <field type="INT(11) NOT NULL AUTO_INCREMENT">id</field>
             <field type="INT(11) NOT NULL">uid</field>
             <field type="VARCHAR(10)">oauth_provider</field>
