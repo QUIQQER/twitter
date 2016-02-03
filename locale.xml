@@ -30,6 +30,9 @@
                     2. Callback URL eintragen:
                     <span class="callback-url"></span>
                 </li>
+                <li>
+                    3. Consumer-Key und Consumer-Secret bitte eintragen
+                </li>
             </ul>
             ]]></de>
             <en><![CDATA[
@@ -40,6 +43,9 @@
                 <li>
                     2. Set the Callback URL to:
                     <span class="callback-url"></span>
+                </li>
+                <li>
+                    3. Please insert the Consumer-Key and Consumer-Secret
                 </li>
             </ul>
             ]]></en>

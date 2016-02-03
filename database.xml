@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+
+    <global>
+        <table name="users">
+            <field type="INT(11) NOT NULL AUTO_INCREMENT">id</field>
+            <field type="INT(11) NOT NULL">uid</field>
+            <field type="VARCHAR(10)">oauth_provider</field>
+            <field type="TEXT">oauth_uid</field>
+            <field type="TEXT">oauth_token</field>
+            <field type="TEXT">oauth_secret</field>
+            <field type="TEXT">username</field>
+
+            <auto_increment>id</auto_increment>
+            <primary>id</primary>
+        </table>
+    </global>
+
+</database>

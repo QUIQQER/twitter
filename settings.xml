@@ -11,6 +11,9 @@
                 <conf name="CONSUMER_SECRET">
                     <type><![CDATA[string]]></type>
                 </conf>
+                <conf name="CONSUMER_SECRET">
+                    <type><![CDATA[string]]></type>
+                </conf>
             </section>
         </config>
 
