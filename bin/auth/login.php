@@ -13,7 +13,6 @@ $User = QUI::getUserBySession();
 
 if (!QUI::getUsers()->isAuth($User)) {
     die('Pleas login');
-    exit;
 }
 
 $Twitter = QUI::getPackage('quiqqer/twitter');
@@ -25,7 +24,7 @@ try {
     );
 
     $request_token = $Connection->oauth(
-        'oauth/request_token',
+        'oauth/request_token'
 //        array('oauth_callback' => OAUTH_CALLBACK)
     );
 
