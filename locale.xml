@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <groups name="quiqqer/twitter" datatype="php">
+        <locale name="settings.title">
+            <de><![CDATA[Webseiten Caching Einstellungen]]></de>
+            <en><![CDATA[Website caching settings]]></en>
+        </locale>
+    </groups>
+
+    <groups name="quiqqer/twitter" datatype="php,js">
+        <locale name="settings.window.title">
+            <de><![CDATA[Twitter Einstellungen]]></de>
+            <en><![CDATA[Twitter settingss]]></en>
+        </locale>
+        <locale name="settings.window.category.auth.button">
+            <de><![CDATA[Auth Einstellungen]]></de>
+            <en><![CDATA[Authentication settingss]]></en>
+        </locale>
+        <locale name="settings.window.category.auth.title">
+            <de><![CDATA[Auth Einstellungen]]></de>
+            <en><![CDATA[Authentication settingss]]></en>
+        </locale>
+        <locale name="settings.window.category.auth.description" html="true">
+            <de><![CDATA[
+            <ul>
+                <li>
+                    1. Twitter App registrieren unter: dev.twitter.com/apps/
+                </li>
+                <li>
+                    2. Callback URL eintragen:
+                    <span class="callback-url"></span>
+                </li>
+            </ul>
+            ]]></de>
+            <en><![CDATA[
+            <ul>
+                <li>
+                    1. Register a Twitter App: dev.twitter.com/apps/
+                </li>
+                <li>
+                    2. Set the Callback URL to:
+                    <span class="callback-url"></span>
+                </li>
+            </ul>
+            ]]></en>
+        </locale>
+    </groups>
+</locales>

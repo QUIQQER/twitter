@@ -2,7 +2,7 @@
 <quiqqer>
     <settings>
 
-        <config name="plugins/quiqqer/twitter">
+        <config>
 
             <section name="auth">
                 <conf name="CONSUMER_KEY">
@@ -14,20 +14,31 @@
             </section>
         </config>
 
-        <window name="quiqqer-log-settings">
-            <title>Twitter Einstellungen</title>
+        <window>
+            <title>
+                <locale group="quiqqer/twitter" var="settings.window.title"/>
+            </title>
             <params>
-                <icon>icon-twitter</icon>
+                <icon>fa fa-twitter</icon>
             </params>
 
             <categories>
 
-                <category name="twitter_auth">
-                    <text>Twitter Einstellungen</text>
+                <category name="twitter_auth"
+                          require="package/quiqqer/twitter/bin/controls/AuthSettings"
+                >
+                    <text>
+                        <locale group="quiqqer/twitter" var="settings.window.category.auth.button"/>
+                    </text>
                     <icon>icon-twitter</icon>
 
                     <settings title="twitter_auth_section" name="twitter_auth_section">
-                        <title>Auth Einstellungen</title>
+                        <title>
+                            <locale group="quiqqer/twitter" var="settings.window.category.auth.title"/>
+                        </title>
+                        <text>
+                            <locale group="quiqqer/twitter" var="settings.window.category.auth.description"/>
+                        </text>
 
                         <input conf="auth.CONSUMER_KEY">
                             <text>CONSUMER_KEY</text>
