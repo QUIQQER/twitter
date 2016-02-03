@@ -34,7 +34,7 @@
                     3. Consumer-Key und Consumer-Secret bitte eintragen
                 </li>
                 <li>
-                    4. Get Access to the App. Call the following URL:
+                    4. Zugriffe der App erlauben. Bitte rufen Sie hierfür folgende URL auf:
                     <span class="login-url"></span>
                 </li>
             </ul>
@@ -50,6 +50,10 @@
                 </li>
                 <li>
                     3. Please insert the Consumer-Key and Consumer-Secret
+                </li>
+                <li>
+                    4. Get Access to the App. Call the following URL:
+                    <span class="login-url"></span>
                 </li>
             </ul>
             ]]></en>
