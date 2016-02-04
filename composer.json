@@ -17,14 +17,14 @@
     "url": "http://www.pcsg.de"
   },
   "require": {
-    "php": ">=5.3",
+    "php": ">=5.5",
     "quiqqer/quiqqer": "*@dev",
     "abraham/twitteroauth": ">=0.6",
     "mremi/url-shortener": "1.*"
   },
   "autoload": {
     "psr-0": {
-      "Hen": "src/"
+      "QUI": "src/"
     }
   }
 }
