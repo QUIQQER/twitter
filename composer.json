@@ -19,7 +19,7 @@
   "require": {
     "php": ">=5.3",
     "quiqqer/quiqqer": "*@dev",
-    "abraham/twitteroauth": "*",
+    "abraham/twitteroauth": ">=0.6",
     "mremi/url-shortener": "1.*"
   },
   "autoload": {
