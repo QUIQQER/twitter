@@ -51,10 +51,14 @@ try {
         $Session->set('access_token', $access_token);
         $Session->set('status', 'verified');
 
-        $Session->del('oauth_token');
-        $Session->del('oauth_token_secret');
-
         $userData = $Connection->get('account/verify_credentials');
+
+        if (isset($userData->errors) && count($userData->errors)) {
+            throw new QUI\Exception(
+                $userData->errors[0]->message,
+                $userData->errors[0]->code
+            );
+        }
 
         $result = QUI::getDataBase()->fetch(array(
             'from' => QUI\Twitter\Handler::getUserDatabaseTableName(),
@@ -91,16 +95,16 @@ try {
             );
         }
 
-    } else {
-        $Session->destroy();
         header('Location: ' . URL_DIR);
+
+    } else {
+//        header('Location: ' . URL_DIR);
         exit;
     }
 
 } catch (\Exception $Exception) {
     QUI\System\Log::writeException($Exception);
 
-    $Session->destroy();
-    header('Location: ' . URL_DIR);
+    echo $Exception->getMessage();
     exit;
 }

@@ -24,20 +24,14 @@ try {
         $Twitter->getConfig()->get('auth', 'CONSUMER_SECRET')
     );
 
-    $request_token = $Connection->oauth(
-        'oauth/request_token'
-//        array('oauth_callback' => OAUTH_CALLBACK)
-    );
+    $request_token = $Connection->oauth('oauth/request_token');
 
     switch ($Connection->getLastHttpCode()) {
         case 200:
             $Session->set('oauth_token', $request_token['oauth_token']);
             $Session->set('oauth_token_secret', $request_token['oauth_token_secret']);
 
-            $url = $Connection->url(
-                'oauth/authorize',
-                array('oauth_token' => $Session->get('oauth_token'))
-            );
+            $url = $Connection->url('oauth/authorize', $request_token);
 
             header('Location: ' . $url);
             break;
