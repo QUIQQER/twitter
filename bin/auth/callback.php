@@ -54,14 +54,12 @@ try {
         $access_token['oauth_token_secret']
     );
 
-    $access_token = $Connection->get('account/verify_credentials');
+    $userData = $Connection->get('account/verify_credentials');
 
 
     if (200 == $Connection->getLastHttpCode()) {
         $Session->set('access_token', $access_token);
         $Session->set('status', 'verified');
-
-        $userData = $Connection->get('account/verify_credentials');
 
         if (isset($userData->errors) && count($userData->errors)) {
             throw new QUI\Exception(
@@ -85,8 +83,8 @@ try {
                     'uid' => $User->getId(),
                     'oauth_uid' => $userData->id,
                     'oauth_provider' => 'twitter',
-                    'oauth_token' => $access_token->oauth_token,
-                    'oauth_secret' => $access_token->oauth_token_secret,
+                    'oauth_token' => $access_token['oauth_token'],
+                    'oauth_secret' => $access_token['oauth_token_secret'],
                     'username' => $userData->screen_name
                 )
             );
@@ -96,8 +94,8 @@ try {
                 array(
                     'uid' => $User->getId(),
                     'oauth_provider' => 'twitter',
-                    'oauth_token' => $access_token->oauth_token,
-                    'oauth_secret' => $access_token->oauth_token_secret,
+                    'oauth_token' => $access_token['oauth_token'],
+                    'oauth_secret' => $access_token['oauth_token_secret'],
                     'username' => $userData->screen_name
                 ),
                 array(
