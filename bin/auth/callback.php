@@ -25,7 +25,7 @@ if (isset($_REQUEST['oauth_token'])
     && $request_token['oauth_token'] !== $_REQUEST['oauth_token']
 ) {
     $Session->set('oauth_status', 'oldtoken');
-    header('Location: ' . URL_DIR);
+    echo "Tokens are invalid";
     exit;
 }
 
@@ -47,6 +47,13 @@ try {
         array("oauth_verifier" => $_REQUEST['oauth_verifier'])
     );
 
+    $Connection = new TwitterOAuth(
+        $Twitter->getConfig()->get('auth', 'CONSUMER_KEY'),
+        $Twitter->getConfig()->get('auth', 'CONSUMER_SECRET'),
+        $access_token['oauth_token'],
+        $access_token['oauth_token_secret']
+    );
+
     if (200 == $Connection->getLastHttpCode()) {
         $Session->set('access_token', $access_token);
         $Session->set('status', 'verified');
@@ -59,6 +66,7 @@ try {
                 $userData->errors[0]->code
             );
         }
+
 
         $result = QUI::getDataBase()->fetch(array(
             'from' => QUI\Twitter\Handler::getUserDatabaseTableName(),
