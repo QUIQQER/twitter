@@ -16,6 +16,7 @@ if (!QUI::getUsers()->isAuth($User)) {
 }
 
 $Twitter = QUI::getPackage('quiqqer/twitter');
+$Session = QUI::getSession();
 
 try {
     $Connection = new TwitterOAuth(
