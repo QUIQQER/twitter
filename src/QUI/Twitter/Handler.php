@@ -74,7 +74,7 @@ class Handler
         $usernames = array();
 
         foreach ($result as $entry) {
-            $usernames[] = $entry['usernames'];
+            $usernames[] = $entry['username'];
         }
 
         return $usernames;
