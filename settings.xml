@@ -33,7 +33,7 @@
                     <text>
                         <locale group="quiqqer/twitter" var="settings.window.category.auth.button"/>
                     </text>
-                    <icon>icon-twitter</icon>
+                    <icon>fa fa-twitter</icon>
 
                     <settings title="twitter_auth_section" name="twitter_auth_section">
                         <title>
