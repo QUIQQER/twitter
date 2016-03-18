@@ -26,6 +26,10 @@ if (isset($_REQUEST['oauth_token'])
 ) {
     $Session->set('oauth_status', 'oldtoken');
     echo "Tokens are invalid";
+    echo '<pre>';
+    print_r($request_token, true);
+    echo '</pre>';
+
     exit;
 }
 

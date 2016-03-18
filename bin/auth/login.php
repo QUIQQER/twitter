@@ -12,7 +12,7 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 $User = QUI::getUserBySession();
 
 if (!QUI::getUsers()->isAuth($User)) {
-    die('Pleas login');
+    die('Please login');
 }
 
 $Twitter = QUI::getPackage('quiqqer/twitter');

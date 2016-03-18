@@ -10,7 +10,7 @@
     <groups name="quiqqer/twitter" datatype="php,js">
         <locale name="settings.window.title">
             <de><![CDATA[Twitter Einstellungen]]></de>
-            <en><![CDATA[Twitter settingss]]></en>
+            <en><![CDATA[Twitter settings]]></en>
         </locale>
         <locale name="settings.window.category.auth.button">
             <de><![CDATA[Auth Einstellungen]]></de>
