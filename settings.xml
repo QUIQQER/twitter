@@ -14,12 +14,12 @@
             </section>
         </config>
 
-        <window>
+        <window name="social">
             <title>
                 <locale group="quiqqer/twitter" var="settings.window.title"/>
             </title>
             <params>
-                <icon>fa fa-twitter</icon>
+                <icon>fa fa-world</icon>
             </params>
 
             <categories>
