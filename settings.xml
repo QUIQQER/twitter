@@ -2,8 +2,7 @@
 <quiqqer>
     <settings>
 
-        <config>
-
+        <config name="twitter">
             <section name="auth">
                 <conf name="CONSUMER_KEY">
                     <type><![CDATA[string]]></type>
@@ -19,7 +18,7 @@
                 <locale group="quiqqer/twitter" var="settings.window.title"/>
             </title>
             <params>
-                <icon>fa fa-world</icon>
+                <icon>fa fa-globe</icon>
             </params>
 
             <categories>
