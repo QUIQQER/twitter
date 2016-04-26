@@ -2,7 +2,7 @@
 <quiqqer>
     <settings>
 
-        <config name="twitter">
+        <config>
             <section name="auth">
                 <conf name="TWITTER_CONSUMER_KEY">
                     <type><![CDATA[string]]></type>
