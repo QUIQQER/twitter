@@ -20,8 +20,8 @@ $Session = QUI::getSession();
 
 try {
     $Connection = new TwitterOAuth(
-        $Twitter->getConfig()->get('auth', 'CONSUMER_KEY'),
-        $Twitter->getConfig()->get('auth', 'CONSUMER_SECRET')
+        $Twitter->getConfig()->get('auth', 'TWITTER_CONSUMER_KEY'),
+        $Twitter->getConfig()->get('auth', 'TWITTER_CONSUMER_SECRET')
     );
 
     $request_token = $Connection->oauth('oauth/request_token');

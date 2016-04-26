@@ -4,10 +4,10 @@
 
         <config name="twitter">
             <section name="auth">
-                <conf name="CONSUMER_KEY">
+                <conf name="TWITTER_CONSUMER_KEY">
                     <type><![CDATA[string]]></type>
                 </conf>
-                <conf name="CONSUMER_SECRET">
+                <conf name="TWITTER_CONSUMER_SECRET">
                     <type><![CDATA[string]]></type>
                 </conf>
             </section>
@@ -39,11 +39,11 @@
                             <locale group="quiqqer/twitter" var="settings.window.category.auth.description"/>
                         </text>
 
-                        <input conf="auth.CONSUMER_KEY">
+                        <input conf="auth.TWITTER_CONSUMER_KEY">
                             <text>CONSUMER_KEY</text>
                         </input>
 
-                        <input conf="auth.CONSUMER_SECRET">
+                        <input conf="auth.TWITTER_CONSUMER_SECRET">
                             <text>CONSUMER_SECRET</text>
                         </input>
                     </settings>

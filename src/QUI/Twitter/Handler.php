@@ -50,8 +50,8 @@ class Handler
         $data = $result[0];
 
         $Connection = new TwitterOAuth(
-            $Twitter->getConfig()->get('auth', 'CONSUMER_KEY'),
-            $Twitter->getConfig()->get('auth', 'CONSUMER_SECRET'),
+            $Twitter->getConfig()->get('auth', 'TWITTER_CONSUMER_KEY'),
+            $Twitter->getConfig()->get('auth', 'TWITTER_CONSUMER_SECRET'),
             $data['oauth_token'],
             $data['oauth_secret']
         );

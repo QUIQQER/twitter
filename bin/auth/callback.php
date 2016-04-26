@@ -40,8 +40,8 @@ if (!isset($_REQUEST['oauth_verifier'])) {
 
 try {
     $Connection = new TwitterOAuth(
-        $Twitter->getConfig()->get('auth', 'CONSUMER_KEY'),
-        $Twitter->getConfig()->get('auth', 'CONSUMER_SECRET'),
+        $Twitter->getConfig()->get('auth', 'TWITTER_CONSUMER_KEY'),
+        $Twitter->getConfig()->get('auth', 'TWITTER_CONSUMER_SECRET'),
         $request_token['oauth_token'],
         $request_token['oauth_token_secret']
     );
@@ -52,8 +52,8 @@ try {
     );
 
     $Connection = new TwitterOAuth(
-        $Twitter->getConfig()->get('auth', 'CONSUMER_KEY'),
-        $Twitter->getConfig()->get('auth', 'CONSUMER_SECRET'),
+        $Twitter->getConfig()->get('auth', 'TWITTER_CONSUMER_KEY'),
+        $Twitter->getConfig()->get('auth', 'TWITTER_CONSUMER_SECRET'),
         $access_token['oauth_token'],
         $access_token['oauth_token_secret']
     );
