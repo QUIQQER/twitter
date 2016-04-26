@@ -13,8 +13,8 @@
             <en><![CDATA[Social networks]]></en>
         </locale>
         <locale name="settings.window.category.auth.button">
-            <de><![CDATA[Auth Einstellungen]]></de>
-            <en><![CDATA[Authentication settingss]]></en>
+            <de><![CDATA[Twitter]]></de>
+            <en><![CDATA[Twitter]]></en>
         </locale>
         <locale name="settings.window.category.auth.title">
             <de><![CDATA[Auth Einstellungen]]></de>
