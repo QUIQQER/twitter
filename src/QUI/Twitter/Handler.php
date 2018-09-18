@@ -22,14 +22,32 @@ class Handler
     }
 
     /**
-     * Return the twitter connection from an user
+     * Return the Twitter connection for a Twitter username
+     *
+     * @deprecated Use getConnectionByTwitterUsername() instead
      *
      * @param string $twitterUsername
+     *
      * @return TwitterOAuth
      *
      * @throws QUI\Exception
      */
     public static function getConnectionByUser($twitterUsername)
+    {
+        return self::getConnectionByTwitterUsername($twitterUsername);
+    }
+
+
+    /**
+     * Return the Twitter connection for a Twitter username
+     *
+     * @param string $twitterUsername
+     *
+     * @return TwitterOAuth
+     *
+     * @throws QUI\Exception
+     */
+    public static function getConnectionByTwitterUsername($twitterUsername)
     {
         $Twitter = QUI::getPackage('quiqqer/twitter');
 
