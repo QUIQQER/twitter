@@ -34,7 +34,7 @@ class Handler
         $Twitter = QUI::getPackage('quiqqer/twitter');
 
         $result = QUI::getDataBase()->fetch(array(
-            'from' => QUI\Twitter\Handler::getUserDatabaseTableName(),
+            'from'  => QUI\Twitter\Handler::getUserDatabaseTableName(),
             'where' => array(
                 'username' => $twitterUsername
             )
@@ -60,15 +60,26 @@ class Handler
     }
 
     /**
-     * Return all twitter users in the system
+     * Returns an array of all twitter usernames in the system
      *
-     * @return array
+     * @deprecated Use getTwitterUsernames() instead
+     * @return string[]
      */
     public static function getTwitterUser()
     {
+        return self::getTwitterUsernames();
+    }
+
+    /**
+     * Returns an array of all twitter usernames in the system
+     *
+     * @return string[]
+     */
+    public static function getTwitterUsernames()
+    {
         $result = QUI::getDataBase()->fetch(array(
             'select' => 'username',
-            'from' => QUI\Twitter\Handler::getUserDatabaseTableName()
+            'from'   => QUI\Twitter\Handler::getUserDatabaseTableName()
         ));
 
         $usernames = array();
