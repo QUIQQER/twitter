@@ -49,8 +49,6 @@ class Handler
      */
     public static function getConnectionByTwitterUsername($twitterUsername)
     {
-        $Twitter = QUI::getPackage('quiqqer/twitter');
-
         $result = QUI::getDataBase()->fetch(array(
             'from'  => QUI\Twitter\Handler::getUserDatabaseTableName(),
             'where' => array(
@@ -68,8 +66,8 @@ class Handler
         $data = $result[0];
 
         $Connection = new TwitterOAuth(
-            $Twitter->getConfig()->get('auth', 'TWITTER_CONSUMER_KEY'),
-            $Twitter->getConfig()->get('auth', 'TWITTER_CONSUMER_SECRET'),
+            self::getConsumerKey(),
+            self::getConsumerSecret(),
             $data['oauth_token'],
             $data['oauth_secret']
         );
@@ -107,6 +105,32 @@ class Handler
         }
 
         return $usernames;
+    }
+
+
+    /**
+     * Returns the Twitter Consumer Key set in the system's config
+     *
+     * @return array|string
+     *
+     * @throws QUI\Exception
+     */
+    public static function getConsumerKey()
+    {
+        return self::getPackageConfig()->get('auth', 'TWITTER_CONSUMER_KEY');
+    }
+
+
+    /**
+     * Returns the Twitter Consumer Secret set in the system's config
+     *
+     * @return string
+     *
+     * @throws QUI\Exception
+     */
+    public static function getConsumerSecret()
+    {
+        return self::getPackageConfig()->get('auth', 'TWITTER_CONSUMER_SECRET');
     }
 
 
