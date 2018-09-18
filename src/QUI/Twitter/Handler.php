@@ -12,13 +12,15 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 class Handler
 {
     /**
-     * Return the database table name from the twitter users
+     * Return the database table name from the twitter users.
+     *
+     * @deprecated Use UserHandler::getUserDatabaseTableName() instead.
      *
      * @return string
      */
     public static function getUserDatabaseTableName()
     {
-        return QUI::getDBTableName('twitter_users');
+        return UserHandler::getUserDatabaseTableName();
     }
 
     /**
@@ -51,7 +53,7 @@ class Handler
     public static function getConnectionByQuiqqerUser(QUI\Interfaces\Users\User $User)
     {
         $result = QUI::getDataBase()->fetch(array(
-            'from'  => QUI\Twitter\Handler::getUserDatabaseTableName(),
+            'from'  => QUI\Twitter\UserHandler::getUserDatabaseTableName(),
             'where' => array(
                 'uid' => $User->getId()
             ),
@@ -119,7 +121,7 @@ class Handler
     public static function getConnectionByTwitterUsername($twitterUsername)
     {
         $result = QUI::getDataBase()->fetch(array(
-            'from'  => QUI\Twitter\Handler::getUserDatabaseTableName(),
+            'from'  => QUI\Twitter\UserHandler::getUserDatabaseTableName(),
             'where' => array(
                 'username' => $twitterUsername
             )
@@ -147,27 +149,6 @@ class Handler
      */
     public static function getTwitterUser()
     {
-        return self::getTwitterUsernames();
-    }
-
-    /**
-     * Returns an array of all twitter usernames in the system
-     *
-     * @return string[]
-     */
-    public static function getTwitterUsernames()
-    {
-        $result = QUI::getDataBase()->fetch(array(
-            'select' => 'username',
-            'from'   => QUI\Twitter\Handler::getUserDatabaseTableName()
-        ));
-
-        $usernames = array();
-
-        foreach ($result as $entry) {
-            $usernames[] = $entry['username'];
-        }
-
-        return $usernames;
+        return UserHandler::getTwitterUsernames();
     }
 }
