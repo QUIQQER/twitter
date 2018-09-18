@@ -74,6 +74,19 @@ class Handler
 
 
     /**
+     * Returns the Twitter-Connection for the current QUIQQER user-session
+     *
+     * @return TwitterOAuth
+     *
+     * @throws QUI\Exception
+     */
+    public static function getConnectionBySession()
+    {
+        return self::getConnectionByQuiqqerUser(QUI::getUserBySession());
+    }
+
+
+    /**
      * Returns the Twitter connection for an OAuth Token and it's secret.
      *
      * @param $oAuthToken
