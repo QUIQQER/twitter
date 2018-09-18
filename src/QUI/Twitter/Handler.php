@@ -108,4 +108,17 @@ class Handler
 
         return $usernames;
     }
+
+
+    /**
+     * Returns this package's config or false if there is none
+     *
+     * @return bool|QUI\Config
+     *
+     * @throws QUI\Exception
+     */
+    public static function getPackageConfig()
+    {
+        return QUI::getPackage('quiqqer/twitter')->getConfig();
+    }
 }
