@@ -38,6 +38,39 @@ class Handler
     }
 
 
+    /**
+     * Returns the Twitter-Connection for a QUIQQER user.
+     * Throws an exception if the user hasn't registered a Twitter-account.
+     *
+     * @param QUI\Interfaces\Users\User $User
+     *
+     * @return TwitterOAuth
+     *
+     * @throws QUI\Exception
+     */
+    public static function getConnectionByQuiqqerUser(QUI\Interfaces\Users\User $User)
+    {
+        $result = QUI::getDataBase()->fetch(array(
+            'from'  => QUI\Twitter\Handler::getUserDatabaseTableName(),
+            'where' => array(
+                'uid' => $User->getId()
+            ),
+            'limit' => '1'
+        ));
+
+        if (!isset($result[0])) {
+            throw new QUI\Exception(array(
+                'quiqqer/twitter',
+                'exception.twitteruser.not.found'
+            ));
+        }
+
+        $data = $result[0];
+
+        $Connection = self::getConnectionByOAuthToken($data['oauth_token'], $data['oauth_secret']);
+
+        return $Connection;
+    }
 
 
     /**
