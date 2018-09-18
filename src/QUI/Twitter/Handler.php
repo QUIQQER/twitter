@@ -38,6 +38,29 @@ class Handler
     }
 
 
+
+
+    /**
+     * Returns the Twitter connection for an OAuth Token and it's secret.
+     *
+     * @param $oAuthToken
+     * @param $oAuthTokenSecret
+     *
+     * @return TwitterOAuth
+     *
+     * @throws QUI\Exception
+     */
+    public static function getConnectionByOAuthToken($oAuthToken, $oAuthTokenSecret)
+    {
+        return new TwitterOAuth(
+            self::getConsumerKey(),
+            self::getConsumerSecret(),
+            $oAuthToken,
+            $oAuthTokenSecret
+        );
+    }
+
+
     /**
      * Return the Twitter connection for a Twitter username
      *
@@ -65,12 +88,7 @@ class Handler
 
         $data = $result[0];
 
-        $Connection = new TwitterOAuth(
-            self::getConsumerKey(),
-            self::getConsumerSecret(),
-            $data['oauth_token'],
-            $data['oauth_secret']
-        );
+        $Connection = self::getConnectionByOAuthToken($data['oauth_token'], $data['oauth_secret']);
 
         return $Connection;
     }
