@@ -1,43 +1,44 @@
 ![QUIQQER Translator](bin/images/Readme.jpg)
 ========
 
-Twitter Verbindung, damit vom System aus getweetet werden kann.
+Twitter connection, to access the Twitter-API from your QUIQQER-system.
 
 
-Paketname:
+Package name:
 
     quiqqer/twitter
 
 
-Features (Funktionen)
+Features
 --------
-
 - Twitter OAuth client
+
 
 Installation
 ------------
+The package name is: quiqqer/twitter
 
-Der Paketname ist: quiqqer/twitter
 
-
-Mitwirken
+Contribute
 ----------
-
 - Issue Tracker: https://dev.quiqqer.com/quiqqer/twitter/issues
-- Source Code: https://dev.quiqqer.com/quiqqer/twitter
+- Source Code: https://dev.quiqqer.com/quiqqer/twitter/tree/master
 
 
 Support
 -------
+If you found any flaws, have any wishes or suggestions you can send an email
+to [support@pcsg.de](mailto:support@pcsg.de) to inform us about your concerns.  
+We will try to respond to your request and forward it to the responsible developer.
 
-Falls Sie ein Fehler gefunden haben, oder Verbesserungen wünschen,
-dann können Sie gerne an support@pcsg.de eine E-Mail schreiben.
 
-
-Lizenz
+License
 -------
-
 MIT
 
-Entwickler
---------
+
+Usage
+-----
+1. Install this plugin
+2. Follow the instructions in the QUIQQER-administration under `Settings > Social Networks > Twitter`
+3. Checkout the classes under `src/QUI/Twitter` (especially the `Connection.php`-class) to get started
