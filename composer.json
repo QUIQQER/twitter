@@ -28,8 +28,8 @@
     "abraham/twitteroauth": "1.*"
   },
   "autoload": {
-    "psr-0": {
-      "QUI": "src/"
+    "psr-4": {
+      "QUI\\Twitter\\": "src\/QUI\/Twitter"
     }
   }
 }
