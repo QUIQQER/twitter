@@ -2,7 +2,7 @@
   "name": "quiqqer/twitter",
   "type": "quiqqer-plugin",
   "description": "Twitter connection, to access the Twitter-API from your QUIQQER-system.",
-  "version": "dev-master",
+  "version": "1.0.0",
   "license": "GPL-3.0+",
   "authors": [
     {
