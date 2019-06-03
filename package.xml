@@ -1,0 +1,31 @@
+<quiqqer>
+    <package>
+        <title>
+            <locale group="quiqqer/translator" var="package.title"/>
+        </title>
+
+        <description>
+            <locale group="quiqqer/translator" var="package.description"/>
+        </description>
+
+        <image src="URL_OPT_DIR/quiqqer/translator/bin/images/Logo.jpg"/>
+
+        <preview>
+            <image src="URL_OPT_DIR/quiqqer/quiqqer/bin/images/screenshot1.png"/>
+            <image src="URL_OPT_DIR/quiqqer/quiqqer/bin/images/screenshot2.png"/>
+        </preview>
+
+        <support>
+            <email><![CDATA[support@pcsg.de]]></email>
+            <forum><![CDATA[https://community.quiqqer.com]]></forum>
+            <source><![CDATA[https://dev.quiqqer.com/quiqqer/package-translator]]></source>
+            <issues><![CDATA[https://dev.quiqqer.com/quiqqer/package-translator/issues]]></issues>
+            <wiki><![CDATA[https://dev.quiqqer.com/quiqqer/package-translator/wikis/home]]></wiki>
+        </support>
+
+        <copyright>
+            <name><![CDATA[PCSG - Computer & Internet Service OHG]]></name>
+            <license><![CDATA[GPL-3.0+]]></license>
+        </copyright>
+    </package>
+</quiqqer>

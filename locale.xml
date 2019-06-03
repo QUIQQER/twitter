@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <locales>
-    <groups name="quiqqer/twitter" datatype="php">
-        <locale name="settings.title">
-            <de><![CDATA[Webseiten Caching Einstellungen]]></de>
-            <en><![CDATA[Website caching settings]]></en>
-        </locale>
-    </groups>
-
     <groups name="quiqqer/twitter" datatype="php,js">
+        <locale name="package.title">
+            <de><![CDATA[QUIQQER - Twitter]]></de>
+            <en><![CDATA[QUIQQER - Twitter]]></en>
+        </locale>
+        <locale name="package.description" html="true">
+            <de><![CDATA[Dieses Paket erlaubt die Verwendung der Twitter-API in QUIQQER.]]></de>
+            <en><![CDATA[This package allows using the Twitter-API in QUIQQER.]]></en>
+        </locale>
+
         <locale name="settings.window.title">
             <de><![CDATA[Soziale Netzwerke]]></de>
             <en><![CDATA[Social networks]]></en>
@@ -18,7 +20,7 @@
         </locale>
         <locale name="settings.window.category.auth.title">
             <de><![CDATA[Auth Einstellungen]]></de>
-            <en><![CDATA[Authentication settingss]]></en>
+            <en><![CDATA[Authentication settings]]></en>
         </locale>
         <locale name="settings.window.category.auth.description" html="true">
             <de><![CDATA[
