@@ -1,7 +1,7 @@
-QUIQQER Twitter
+![QUIQQER Translator](bin/images/Readme.jpg)
 ========
 
-Twitter Verbindung, damit vom System aus getwittert werden kann.
+Twitter Verbindung, damit vom System aus getweetet werden kann.
 
 
 Paketname:
@@ -12,7 +12,7 @@ Paketname:
 Features (Funktionen)
 --------
 
-- Twitter oauth client
+- Twitter OAuth client
 
 Installation
 ------------
