@@ -1,26 +1,21 @@
 <quiqqer>
     <package>
         <title>
-            <locale group="quiqqer/translator" var="package.title"/>
+            <locale group="quiqqer/twitter" var="package.title"/>
         </title>
 
         <description>
-            <locale group="quiqqer/translator" var="package.description"/>
+            <locale group="quiqqer/twitter" var="package.description"/>
         </description>
 
-        <image src="URL_OPT_DIR/quiqqer/translator/bin/images/Logo.jpg"/>
-
-        <preview>
-            <image src="URL_OPT_DIR/quiqqer/quiqqer/bin/images/screenshot1.png"/>
-            <image src="URL_OPT_DIR/quiqqer/quiqqer/bin/images/screenshot2.png"/>
-        </preview>
+        <image src="URL_OPT_DIR/quiqqer/twitter/bin/images/Logo.jpg"/>
 
         <support>
             <email><![CDATA[support@pcsg.de]]></email>
             <forum><![CDATA[https://community.quiqqer.com]]></forum>
-            <source><![CDATA[https://dev.quiqqer.com/quiqqer/package-translator]]></source>
-            <issues><![CDATA[https://dev.quiqqer.com/quiqqer/package-translator/issues]]></issues>
-            <wiki><![CDATA[https://dev.quiqqer.com/quiqqer/package-translator/wikis/home]]></wiki>
+            <source><![CDATA[https://dev.quiqqer.com/quiqqer/twitter]]></source>
+            <issues><![CDATA[https://dev.quiqqer.com/quiqqer/twitter/issues]]></issues>
+            <wiki><![CDATA[https://dev.quiqqer.com/quiqqer/twitter/wikis/home]]></wiki>
         </support>
 
         <copyright>
