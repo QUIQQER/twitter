@@ -1,9 +1,9 @@
 {
   "name": "quiqqer/twitter",
   "type": "quiqqer-plugin",
-  "description": "Twitter for QUIQQER",
+  "description": "Twitter connection, to access the Twitter-API from your QUIQQER-system.",
   "version": "dev-dev",
-  "license": "",
+  "license": "MIT",
   "authors": [
     {
       "name": "Henning Leutz",
