@@ -115,7 +115,6 @@ try {
 //        header('Location: ' . URL_DIR);
         exit;
     }
-
 } catch (\Exception $Exception) {
     QUI\System\Log::writeException($Exception);
 
