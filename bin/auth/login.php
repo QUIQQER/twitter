@@ -5,7 +5,7 @@
  */
 
 define('QUIQQER_SYSTEM', true);
-require dirname(dirname(dirname(dirname(dirname(__FILE__))))) . "/header.php";
+require dirname(dirname(dirname(dirname(dirname(__FILE__)))))."/header.php";
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 
@@ -33,7 +33,7 @@ try {
 
             $url = $Connection->url('oauth/authorize', $request_token);
 
-            header('Location: ' . $url);
+            header('Location: '.$url);
             break;
 
         default:

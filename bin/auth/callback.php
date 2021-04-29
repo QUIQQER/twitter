@@ -5,17 +5,17 @@
  */
 
 define('QUIQQER_SYSTEM', true);
-require dirname(dirname(dirname(dirname(dirname(__FILE__))))) . "/header.php";
+require dirname(dirname(dirname(dirname(dirname(__FILE__)))))."/header.php";
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 $Session = QUI::getSession();
 $Twitter = QUI::getPackage('quiqqer/twitter');
 
-$request_token = array(
-    'oauth_token' => $Session->get('oauth_token'),
+$request_token = [
+    'oauth_token'        => $Session->get('oauth_token'),
     'oauth_token_secret' => $Session->get('oauth_token_secret')
-);
+];
 
 if (isset($_REQUEST['denied'])) {
     exit('Permission was denied. Please start over.');
@@ -33,6 +33,8 @@ if (isset($_REQUEST['oauth_token'])
     exit;
 }
 
+$User = QUI::getUserBySession();
+
 if (!isset($_REQUEST['oauth_verifier'])) {
     $_REQUEST['oauth_verifier'] = '';
 }
@@ -48,7 +50,7 @@ try {
 
     $access_token = $Connection->oauth(
         "oauth/access_token",
-        array("oauth_verifier" => $_REQUEST['oauth_verifier'])
+        ["oauth_verifier" => $_REQUEST['oauth_verifier']]
     );
 
     $Connection = new TwitterOAuth(
@@ -73,43 +75,42 @@ try {
         }
 
 
-        $result = QUI::getDataBase()->fetch(array(
-            'from' => QUI\Twitter\Handler::getUserDatabaseTableName(),
-            'where' => array(
+        $result = QUI::getDataBase()->fetch([
+            'from'  => QUI\Twitter\UserHandler::getUserDatabaseTableName(),
+            'where' => [
                 'oauth_uid' => $userData->id
-            )
-        ));
+            ]
+        ]);
 
         if (!isset($result[0])) {
             QUI::getDataBase()->insert(
-                QUI\Twitter\Handler::getUserDatabaseTableName(),
-                array(
-                    'uid' => $User->getId(),
-                    'oauth_uid' => $userData->id,
+                QUI\Twitter\UserHandler::getUserDatabaseTableName(),
+                [
+                    'uid'            => $User->getId(),
+                    'oauth_uid'      => $userData->id,
                     'oauth_provider' => 'twitter',
-                    'oauth_token' => $access_token['oauth_token'],
-                    'oauth_secret' => $access_token['oauth_token_secret'],
-                    'username' => $userData->screen_name
-                )
+                    'oauth_token'    => $access_token['oauth_token'],
+                    'oauth_secret'   => $access_token['oauth_token_secret'],
+                    'username'       => $userData->screen_name
+                ]
             );
         } else {
             QUI::getDataBase()->update(
-                QUI\Twitter\Handler::getUserDatabaseTableName(),
-                array(
-                    'uid' => $User->getId(),
+                QUI\Twitter\UserHandler::getUserDatabaseTableName(),
+                [
+                    'uid'            => $User->getId(),
                     'oauth_provider' => 'twitter',
-                    'oauth_token' => $access_token['oauth_token'],
-                    'oauth_secret' => $access_token['oauth_token_secret'],
-                    'username' => $userData->screen_name
-                ),
-                array(
+                    'oauth_token'    => $access_token['oauth_token'],
+                    'oauth_secret'   => $access_token['oauth_token_secret'],
+                    'username'       => $userData->screen_name
+                ],
+                [
                     'oauth_uid' => $userData->id
-                )
+                ]
             );
         }
 
-        header('Location: ' . URL_DIR);
-
+        header('Location: '.URL_DIR);
     } else {
 //        header('Location: ' . URL_DIR);
         exit;

@@ -1,9 +1,6 @@
 /**
  * @module package/quiqqer/twitter/bin/controls/AuthSettings
  * @author www.pcsg.de (Henning Leutz)
- *
- * @require qui/QUI
- * @require qui/controls/Control
  */
 define('package/quiqqer/twitter/bin/controls/AuthSettings', [
 
@@ -14,6 +11,7 @@ define('package/quiqqer/twitter/bin/controls/AuthSettings', [
     "use strict";
 
     return new Class({
+
         Extends: QUIControl,
         Type   : 'package/quiqqer/twitter/bin/controls/AuthSettings',
 
@@ -37,13 +35,13 @@ define('package/quiqqer/twitter/bin/controls/AuthSettings', [
                 Url   = Elm.getElement('.callback-url'),
                 Login = Elm.getElement('.login-url');
 
-            var callbackUrl = window.location.toString().replace(URL_SYS_DIR, '') +
-                              URL_OPT_DIR +
-                              'quiqqer/twitter/bin/auth/callback.php';
+            var url = window.location.toString();
 
-            var loginUrl = window.location.toString().replace(URL_SYS_DIR, '') +
-                           URL_OPT_DIR +
-                           'quiqqer/twitter/bin/auth/login.php';
+            url = url.replace(URL_SYS_DIR, '');
+            url = url.replace('#', '');
+
+            var callbackUrl = url + URL_OPT_DIR + 'quiqqer/twitter/bin/auth/callback.php';
+            var loginUrl    = url + URL_OPT_DIR + 'quiqqer/twitter/bin/auth/login.php';
 
             if (Url) {
                 Url.set('html', callbackUrl);
